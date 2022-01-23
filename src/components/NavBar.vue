@@ -323,7 +323,7 @@
                         pages: [
                             {
                                 title: 'VueTube Premium',
-                                link: '#vp',
+                                link: '/vp',
                                 icon: 'mdi-youtube'
                             },
                             {
@@ -423,7 +423,7 @@
         },
         mounted() {
 
-            if (this.currentUser) this.getSubscribedChannels()
+            // if (this.currentUser) this.getSubscribedChannels()
             this.drawer = this.$vuetify.breakpoint.mdAndDown ? false : true
             // console.log(this.$route.name)
             this.drawer = this.$route.name === 'Watch' ? false : this.drawer

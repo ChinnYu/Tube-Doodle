@@ -1,6 +1,6 @@
 <template>
   <div id="home" class="pa-4">
-    <div v-if="isAuth">
+    <div v-if="isAuthenticated">
       <v-container fluid>
         <v-alert prominent type="error" v-if="errored">
           <v-row align="center">
@@ -140,9 +140,11 @@ export default {
     }
   },
   components: {
-    ...mapGetters(['isAuthenticated']),
     VideoCard,
     InfiniteLoading
+  },
+  computed: {
+    ...mapGetters(['isAuthenticated'])
   },
   mounted() {
     // this.getVideos()

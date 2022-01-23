@@ -171,7 +171,7 @@ export default {
     // if (this.$route.query['search-query'])
     //   this.searchText = this.$route.query['search-query']
 
-    if (this.currentUser) this.getSubscribedChannels()
+    // if (this.currentUser) this.getSubscribedChannels()
     // this.user = this.$store.getters.currentUser
     // console.log(this.user)
     this.drawer = this.$vuetify.breakpoint.mdAndDown ? false : true

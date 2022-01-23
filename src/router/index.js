@@ -50,9 +50,10 @@ const routes = [
   {
     path: '/vp',
     name: 'vp',
-    component: () =>
-        import(/* webpackChunkName: "signin" */ '../views/Doodle/DoodleHome.vue'),
-    meta: { requiresVisitor: true }
+    components: {
+      default: () =>
+          import( '../views/Doodle/DoodleHome.vue')
+    }
   }
 ]
 
@@ -66,11 +67,10 @@ router.beforeEach((to, from, next) => {
   const loggedIn = localStorage.getItem('user')
 
   if (to.matched.some((record) => record.meta.requiresAuth) && !loggedIn) {
+    console.log("222");
     next('/')
-  } else if (
-    to.matched.some((record) => record.meta.requiresVisitor) &&
-    loggedIn
-  ) {
+  } else if (to.matched.some((record) => record.meta.requiresVisitor) && loggedIn) {
+    console.log("333");
     next('/')
   } else {
     next()
